@@ -1,1 +1,23 @@
 
+{
+  "name": "edge-bot",
+  "version": "1.0.0",
+  "description": "AI-powered Polymarket betting signal bot",
+  "private": true,
+  "workspaces": [
+    "apps/web",
+    "apps/bot",
+    "packages/shared"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=apps/web\" \"npm run dev --workspace=apps/bot\"",
+    "dev:web": "npm run dev --workspace=apps/web",
+    "dev:bot": "npm run dev --workspace=apps/bot",
+    "build": "npm run build --workspace=apps/web && npm run build --workspace=apps/bot",
+    "build:web": "npm run build --workspace=apps/web",
+    "build:bot": "npm run build --workspace=apps/bot"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
